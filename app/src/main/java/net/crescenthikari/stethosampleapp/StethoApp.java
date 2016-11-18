@@ -12,6 +12,9 @@ public class StethoApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        Stetho.initializeWithDefaults(this);
+        if (BuildConfig.DEBUG) {
+            // Initialize Stetho ony in debug build
+            Stetho.initializeWithDefaults(this);
+        }
     }
 }
